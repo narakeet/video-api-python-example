@@ -23,7 +23,7 @@ os.remove(video_zip)
 # start a build task using the uploaded zip
 # and wait for it to finish
 task = api.request_build_task(upload_token, source_file_in_zip)
-task_result = api.poll_until_finished(task['statusUrl'])
+task_result = api.poll_until_finished(task['statusUrl'], show_progress)
 
 # grab the result file
 if task_result['succeeded']:
